@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyễn Đình Minh | Digital Marketing SEO Ads</title>
+  <meta name="description" content="Portfolio cá nhân của Nguyễn Đình Minh - Digital Marketing chuyên SEO, Google Ads, Facebook Ads, thiết kế landing page và tối ưu hiệu quả chiến dịch." />
+  <meta name="keywords" content="Nguyễn Đình Minh, portfolio digital marketing, SEO, Google Ads, Facebook Ads, landing page" />
+  <meta name="author" content="Nguyễn Đình Minh" />
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --bg-soft: #111c35;
+      --card: rgba(255, 255, 255, 0.06);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --heading: #ffffff;
+      --primary: #38bdf8;
+      --primary-2: #22c55e;
+      --accent: #f59e0b;
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+      --radius: 20px;
+      --max-width: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transparent 30%),
+        radial-gradient(circle at top right, rgba(245, 158, 11, 0.12), transparent 25%),
+        linear-gradient(180deg, #081120 0%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--max-width));
+      margin: auto;
+    }
+
+    .section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      font-size: 34px;
+      line-height: 1.2;
+      color: var(--heading);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .section-subtitle {
+      color: var(--muted);
+      max-width: 760px;
+      margin-bottom: 38px;
+      font-size: 16px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.04);
+      color: #dbeafe;
+      font-size: 14px;
+      margin-bottom: 18px;
+    }
+
+    /* Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(8, 17, 32, 0.78);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 76px;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .logo span {
+      color: var(--primary);
+    }
+
+    .menu {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .menu a {
+      color: #dbe4ef;
+      font-size: 15px;
+      font-weight: 600;
+      transition: 0.25s ease;
+    }
+
+    .menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--primary), #2563eb);
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 12px 30px rgba(37, 99, 235, 0.25);
+      transition: transform 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-2px);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 90px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      line-height: 1.05;
+      font-weight: 900;
+      color: var(--heading);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--primary);
+      display: block;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      color: #d0d9e4;
+      max-width: 720px;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(135deg, #0ea5e9, #2563eb);
+      box-shadow: 0 16px 35px rgba(14, 165, 233, 0.25);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.03);
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(56,189,248,0.5);
+      color: var(--primary);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .stat-card {
+      padding: 20px;
+      border-radius: 18px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 28px;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 6px;
+    }
+
+    .stat-text {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .hero-card {
+      padding: 28px;
+      border-radius: 28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -50px -60px auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(56,189,248,0.12);
+      filter: blur(10px);
+    }
+
+    .profile-box {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 24px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #0ea5e9, #f59e0b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 34px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(245, 158, 11, 0.2);
+    }
+
+    .profile-box h3 {
+      font-size: 24px;
+      color: white;
+      line-height: 1.2;
+      margin-bottom: 4px;
+    }
+
+    .profile-box p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .highlight-item {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #eaf2ff;
+      font-size: 15px;
+    }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .info-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      flex-wrap: wrap;
+    }
+
+    .info-item strong {
+      min-width: 95px;
+      color: white;
+    }
+
+    .about-content p {
+      margin-bottom: 16px;
+      color: #d7deea;
+      font-size: 16px;
+    }
+
+    /* Skills */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .skill-card h3 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .skill-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .skill-list li {
+      padding: 12px 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 12px;
+      color: #d8e2ef;
+      font-size: 15px;
+    }
+
+    /* Experience */
+    .timeline {
+      display: grid;
+      gap: 24px;
+      position: relative;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 28px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      box-shadow: var(--shadow);
+    }
+
+    .timeline-date {
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 18px;
+    }
+
+    .timeline-role {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 8px;
+      font-weight: 800;
+    }
+
+    .timeline-company {
+      color: #cbd5e1;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .timeline-content p {
+      color: #d6deea;
+      margin-bottom: 10px;
+    }
+
+    .timeline-content ul {
+      padding-left: 18px;
+      color: #d6deea;
+    }
+
+    .timeline-content li {
+      margin-bottom: 8px;
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      position: relative;
+    }
+
+    .project-thumb {
+      height: 190px;
+      border-radius: 16px;
+      background:
+        linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(37, 99, 235, 0.08)),
+        linear-gradient(135deg, #18243f, #0f172a);
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #d6deea;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .project-tags {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(56, 189, 248, 0.1);
+      border: 1px solid rgba(56, 189, 248, 0.18);
+      color: #cbefff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .service-card h3 {
+      color: white;
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    .service-card p {
+      color: #d6deea;
+      font-size: 15px;
+    }
+
+    /* CTA */
+    .cta-box {
+      padding: 36px;
+      border-radius: 28px;
+      background:
+        linear-gradient(135deg, rgba(14,165,233,0.18), rgba(37,99,235,0.12)),
+        rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-box h3 {
+      color: white;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      color: #d8e3ef;
+      max-width: 720px;
+    }
+
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 24px;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-item {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .contact-item strong {
+      display: block;
+      color: white;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: #d7e0eb;
+      font-size: 15px;
+      word-break: break-word;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: white;
+      border-radius: 14px;
+      padding: 15px 16px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #93a4b8;
+    }
+
+    .contact-form textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 26px 0 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .timeline-item {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero-desc {
+        font-size: 16px;
+      }
+
+      .hero-stats,
+      .skills-grid,
+      .projects-grid,
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .cta-box h3 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container nav">
+      <a href="#" class="logo"><span>Minh</span> Portfolio</a>
+
+      <ul class="menu">
+        <li><a href="#gioi-thieu">Giới thiệu</a></li>
+        <li><a href="#ky-nang">Kỹ năng</a></li>
+        <li><a href="#kinh-nghiem">Kinh nghiệm</a></li>
+        <li><a href="#du-an">Dự án</a></li>
+        <li><a href="#lien-he">Liên hệ</a></li>
+      </ul>
+
+      <a href="#lien-he" class="nav-cta">Liên hệ ngay</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">Digital Marketing / SEO / Ads</div>
+          <h1>
+            Xin chào, tôi là
+            <span class="highlight">Nguyễn Đình Minh</span>
+          </h1>
+          <p class="hero-desc">
+            Tôi là người làm Digital Marketing tập trung vào SEO, Google Ads, Facebook Ads và tối ưu landing page.
+            Tôi xây dựng chiến lược tăng trưởng dựa trên dữ liệu, tối ưu hiệu quả chuyển đổi và hỗ trợ doanh nghiệp phát triển bền vững trên môi trường số.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#du-an" class="btn btn-primary">Xem dự án</a>
+            <a href="#lien-he" class="btn btn-outline">Kết nối với tôi</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <span class="stat-number">2+ năm</span>
+              <span class="stat-text">Kinh nghiệm Digital Marketing</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">SEO</span>
+              <span class="stat-text">Tối ưu website, content, onpage</span>
+            </div>
+            <div class="stat-card">
+              <span class="stat-number">Ads</span>
+              <span class="stat-text">Google Ads và Facebook Ads</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="profile-box">
+            <div class="avatar">M</div>
+            <div>
+              <h3>Nguyễn Đình Minh</h3>
+              <p>Digital Marketing Executive</p>
+            </div>
+          </div>
+
+          <div class="highlight-list">
+            <div class="highlight-item">Tối ưu SEO website, onpage, content và technical cơ bản</div>
+            <div class="highlight-item">Triển khai Google Ads và Facebook Ads theo mục tiêu chuyển đổi</div>
+            <div class="highlight-item">Thiết kế và tối ưu landing page hỗ trợ marketing performance</div>
+            <div class="highlight-item">Theo dõi dữ liệu bằng Search Console, GA và các công cụ phân tích</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="gioi-thieu">
+      <div class="container">
+        <h2 class="section-title">Giới thiệu bản thân</h2>
+        <p class="section-subtitle">
+          Tôi theo đuổi hướng đi Digital Marketing với mục tiêu phát triển sâu về SEO và Ads, đồng thời kết hợp tư duy nội dung, landing page và phân tích dữ liệu để tạo ra hiệu quả thực tế cho doanh nghiệp.
+        </p>
+
+        <div class="about-grid">
+          <div class="card">
+            <div class="info-list">
+              <div class="info-item">
+                <strong>Họ tên</strong>
+                <span>Nguyễn Đình Minh</span>
+              </div>
+              <div class="info-item">
+                <strong>Vị trí</strong>
+                <span>Digital Marketing (SEO / Ads)</span>
+              </div>
+              <div class="info-item">
+                <strong>Email</strong>
+                <span>nguyendinhminh23052003@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <strong>Điện thoại</strong>
+                <span>0774925296</span>
+              </div>
+              <div class="info-item">
+                <strong>Ngày sinh</strong>
+                <span>23/05/2003</span>
+              </div>
+              <div class="info-item">
+                <strong>Học vấn</strong>
+                <span>FPT Polytechnic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card about-content">
+            <p>
+              Tôi có định hướng phát triển trở thành chuyên viên Digital Marketing có khả năng triển khai đa kênh, đặc biệt là SEO và quảng cáo hiệu suất. Tôi chú trọng vào việc hiểu sản phẩm, hiểu hành vi khách hàng và tối ưu từng điểm chạm để tăng hiệu quả marketing.
+            </p>
+            <p>
+              Trong quá trình làm việc, tôi đã tham gia vào các đầu việc như nghiên cứu từ khóa, lập kế hoạch content SEO, tối ưu bài viết, xây dựng landing page, theo dõi hiệu suất chiến dịch quảng cáo và sử dụng các công cụ như Ahrefs, Semrush, Google Search Console, Google Analytics, Screaming Frog và WordPress.
+            </p>
+            <p>
+              Tôi thích môi trường làm việc có tốc độ, cần tư duy thực chiến và khả năng phối hợp giữa nội dung, quảng cáo, thiết kế và website. Mục tiêu của tôi là không chỉ triển khai mà còn liên tục đo lường, tối ưu và tạo ra tăng trưởng rõ ràng.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section" id="ky-nang">
+      <div class="container">
+        <h2 class="section-title">Kỹ năng chuyên môn</h2>
+        <p class="section-subtitle">
+          Bộ kỹ năng tôi đang sử dụng trong công việc hằng ngày, tập trung vào SEO, quảng cáo hiệu suất, landing page và tối ưu website.
+        </p>
+
+        <div class="skills-grid">
+          <div class="card skill-card">
+            <h3>SEO & Content</h3>
+            <ul class="skill-list">
+              <li>Nghiên cứu từ khóa bằng Ahrefs, Semrush, Google Keyword Planner</li>
+              <li>Phân tích website với Screaming Frog và Website Audit</li>
+              <li>Tối ưu onpage, heading, internal link, meta và cấu trúc bài viết</li>
+              <li>Lập kế hoạch và triển khai content SEO theo mục tiêu từ khóa</li>
+              <li>Theo dõi hiệu suất bằng Search Console và Google Analytics</li>
+            </ul>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Performance Ads</h3>
+            <ul class="skill-list">
+              <li>Triển khai quảng cáo Google Ads theo mục tiêu hiển thị và chuyển đổi</li>
+              <li>Thiết lập Facebook Ads cơ bản cho chiến dịch tiếp cận và tương tác</li>
+              <li>Theo dõi CTR, CPC, CPM, Conversion và tối ưu ngân sách</li>
+              <li>Phân tích hiệu quả chiến dịch theo dữ liệu thực tế</li>
+              <li>Kết hợp landing page để tăng chất lượng chuyển đổi</li>
+            </ul>
+          </div>
+
+          <div class="card skill-card">
+            <h3>Website & Landing Page</h3>
+            <ul class="skill-list">
+              <li>Thiết kế và chỉnh sửa landing page bằng WordPress</li>
+              <li>Tối ưu giao diện hỗ trợ SEO và trải nghiệm người dùng</li>
+              <li>Biết chỉnh sửa HTML, CSS cơ bản để xử lý bố cục</li>
+              <li>Tối ưu tốc độ tải trang ở mức onpage cơ bản</li>
+              <li>Phối hợp nội dung, hình ảnh và CTA phục vụ chuyển đổi</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section class="section" id="kinh-nghiem">
+      <div class="container">
+        <h2 class="section-title">Kinh nghiệm làm việc</h2>
+        <p class="section-subtitle">
+          Kinh nghiệm thực tế trong môi trường agency và các đầu việc triển khai marketing đa nền tảng.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-date">2023 - Hiện tại</div>
+            <div class="timeline-content">
+              <h3 class="timeline-role">Nhân viên Digital Marketing / SEO</h3>
+              <div class="timeline-company">MHD Media Agency</div>
+              <p>
+                Tham gia triển khai SEO website, content marketing và một phần hoạt động quảng cáo cho nhiều dự án trong các lĩnh vực khác nhau.
+              </p>
+              <ul>
+                <li>Nghiên cứu và phân tích từ khóa cho website doanh nghiệp.</li>
+                <li>Lập kế hoạch content SEO theo chủ đề và mục tiêu tìm kiếm.</li>
+                <li>Tối ưu bài viết chuẩn SEO, heading, internal link và meta.</li>
+                <li>Theo dõi hiệu suất bằng Google Search Console, Google Analytics.</li>
+                <li>Hỗ trợ xây dựng và chỉnh sửa landing page trên WordPress.</li>
+                <li>Tham gia triển khai chiến dịch Google Ads và tối ưu dữ liệu cơ bản.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="du-an">
+      <div class="container">
+        <h2 class="section-title">Dự án tiêu biểu</h2>
+        <p class="section-subtitle">
+          Một số nhóm dự án tôi từng tham gia, tập trung vào website, SEO, landing page và quảng cáo.
+        </p>
+
+        <div class="projects-grid">
+          <div class="card project-card">
+            <div class="project-thumb">SEO</div>
+            <h3>Dự án SEO Website</h3>
+            <p>
+              Tham gia nghiên cứu từ khóa, viết và tối ưu nội dung, cải thiện cấu trúc bài viết, hỗ trợ tăng khả năng hiển thị tự nhiên trên Google.
+            </p>
+            <div class="project-tags">
+              <span>SEO Onpage</span>
+              <span>Content</span>
+              <span>Keyword Research</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="project-thumb">ADS</div>
+            <h3>Google Ads Campaign</h3>
+            <p>
+              Hỗ trợ thiết lập chiến dịch quảng cáo Google Ads, theo dõi dữ liệu và tối ưu các chỉ số nhằm cải thiện hiệu quả ngân sách.
+            </p>
+            <div class="project-tags">
+              <span>Google Ads</span>
+              <span>CTR</span>
+              <span>Conversion</span>
+            </div>
+          </div>
+
+          <div class="card project-card">
+            <div class="project-thumb">LP</div>
+            <h3>Landing Page Marketing</h3>
+            <p>
+              Thiết kế và tinh chỉnh landing page trên WordPress để đồng bộ nội dung, CTA và hỗ trợ hiệu suất chuyển đổi cho chiến dịch.
+            </p>
+            <div class="project-tags">
+              <span>WordPress</span>
+              <span>Landing Page</span>
+              <span>UI cơ bản</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Tôi có thể làm gì</h2>
+        <p class="section-subtitle">
+          Các hạng mục tôi có thể hỗ trợ cho cá nhân, doanh nghiệp nhỏ hoặc đội marketing nội bộ.
+        </p>
+
+        <div class="services-grid">
+          <div class="card service-card">
+            <h3>SEO Website</h3>
+            <p>Tối ưu bài viết, từ khóa, cấu trúc onpage và hỗ trợ cải thiện hiệu suất tìm kiếm tự nhiên.</p>
+          </div>
+          <div class="card service-card">
+            <h3>Google Ads</h3>
+            <p>Thiết lập và theo dõi quảng cáo tìm kiếm hoặc hiển thị với mục tiêu rõ ràng theo ngân sách.</p>
+          </div>
+          <div class="card service-card">
+            <h3>Landing Page</h3>
+            <p>Thiết kế, tinh chỉnh landing page phục vụ chạy quảng cáo, thu lead và tăng chuyển đổi.</p>
+          </div>
+          <div class="card service-card">
+            <h3>Content Marketing</h3>
+            <p>Lập kế hoạch nội dung và triển khai bài viết theo định hướng SEO và truyền thông thương hiệu.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h3>Sẵn sàng đồng hành cùng dự án mới</h3>
+            <p>
+              Nếu bạn đang cần một người có thể hỗ trợ SEO, Google Ads, landing page hoặc tối ưu hiệu quả marketing online, tôi rất sẵn lòng kết nối và trao đổi thêm.
+            </p>
+          </div>
+          <a href="#lien-he" class="btn btn-primary">Liên hệ với tôi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="lien-he">
+      <div class="container">
+        <h2 class="section-title">Liên hệ</h2>
+        <p class="section-subtitle">
+          Bạn có thể liên hệ trực tiếp với tôi qua email, điện thoại hoặc gửi lời nhắn nhanh qua form bên dưới.
+        </p>
+
+        <div class="contact-grid">
+          <div class="card">
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Email</strong>
+                <a href="mailto:nguyendinhminh23052003@gmail.com">nguyendinhminh23052003@gmail.com</a>
+              </div>
+              <div class="contact-item">
+                <strong>Điện thoại</strong>
+                <a href="tel:0774925296">0774 925 296</a>
+              </div>
+              <div class="contact-item">
+                <strong>Vị trí mong muốn</strong>
+                <span>Digital Marketing Executive / SEO / Ads</span>
+              </div>
+              <div class="contact-item">
+                <strong>Học vấn</strong>
+                <span>FPT Polytechnic</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <form class="contact-form" onsubmit="sendMail(event)">
+              <input type="text" id="name" placeholder="Họ và tên" required>
+              <input type="email" id="email" placeholder="Email của bạn" required>
+              <input type="text" id="subject" placeholder="Chủ đề">
+              <textarea id="message" placeholder="Nội dung lời nhắn" required></textarea>
+              <button type="submit" class="btn btn-primary">Gửi lời nhắn</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      © 2026 Nguyễn Đình Minh - Portfolio Digital Marketing SEO Ads
+    </div>
+  </footer>
+
+  <script>
+    function sendMail(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const subject = document.getElementById("subject").value.trim() || "Liên hệ từ portfolio";
+      const message = document.getElementById("message").value.trim();
+
+      const body =
+        "Họ tên: " + name + "%0D%0A" +
+        "Email: " + email + "%0D%0A%0D%0A" +
+        "Nội dung:%0D%0A" + message;
+
+      window.location.href =
+        "mailto:nguyendinhminh23052003@gmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" + body;
+    }
+  </script>
+</body>
+</html>
