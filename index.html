@@ -47,6 +47,10 @@
       overflow-x: hidden;
     }
 
+    html {
+      scroll-padding-top: 100px;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
       color: var(--text);
@@ -138,8 +142,7 @@
     }
 
     .card {
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.04));
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
@@ -160,7 +163,6 @@
       filter: blur(14px);
     }
 
-    /* Scroll progress */
     .scroll-progress {
       position: fixed;
       top: 0;
@@ -172,7 +174,6 @@
       box-shadow: 0 0 20px rgba(31,182,255,0.6);
     }
 
-    /* Floating background blur */
     .bg-orb {
       position: fixed;
       border-radius: 50%;
@@ -215,7 +216,17 @@
       50% { transform: translateY(-18px) scale(1.05); }
     }
 
-    /* Header */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
     .header {
       position: sticky;
       top: 0;
@@ -255,6 +266,7 @@
       font-size: 18px;
       box-shadow: 0 0 30px rgba(31,182,255,0.3);
       position: relative;
+      flex-shrink: 0;
     }
 
     .logo-mark::before {
@@ -281,7 +293,8 @@
       list-style: none;
     }
 
-    .menu a {
+    .menu a,
+    .mobile-menu a {
       font-size: 14px;
       color: #d9e8fb;
       font-weight: 700;
@@ -289,7 +302,8 @@
       position: relative;
     }
 
-    .menu a::after {
+    .menu a::after,
+    .mobile-menu a::after {
       content: "";
       position: absolute;
       left: 0;
@@ -300,7 +314,10 @@
       transition: 0.25s ease;
     }
 
-    .menu a:hover {
+    .menu a:hover,
+    .mobile-menu a:hover,
+    .menu a.active,
+    .mobile-menu a.active {
       color: white;
     }
 
@@ -352,6 +369,17 @@
       transform: translateY(-2px);
     }
 
+    .btn-cv {
+      color: white;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
+      box-shadow: 0 18px 40px rgba(34, 197, 94, 0.25);
+    }
+
+    .btn-cv:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(34, 197, 94, 0.32);
+    }
+
     .menu-toggle {
       display: none;
       width: 46px;
@@ -362,6 +390,8 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      position: relative;
+      flex-shrink: 0;
     }
 
     .menu-toggle span,
@@ -396,19 +426,29 @@
       border-radius: 20px;
       padding: 14px;
       box-shadow: var(--shadow);
+      z-index: 1000;
     }
 
     .mobile-menu a {
       display: block;
       padding: 14px 14px;
       border-radius: 12px;
-      color: #d7e8fb;
-      font-weight: 700;
     }
 
-    .mobile-menu a:hover {
+    .mobile-menu a::after {
+      bottom: 6px;
+      left: 14px;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu a.active {
       background: rgba(255,255,255,0.05);
       color: white;
+    }
+
+    .mobile-menu a:hover::after,
+    .mobile-menu a.active::after {
+      width: calc(100% - 28px);
     }
 
     .mobile-menu.show {
@@ -416,7 +456,6 @@
       animation: fadeUp 0.25s ease;
     }
 
-    /* Hero */
     .hero {
       padding: 90px 0 70px;
       min-height: calc(100vh - var(--nav-h));
@@ -533,8 +572,7 @@
     .hero-card {
       padding: 24px;
       border-radius: 28px;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
       border: 1px solid rgba(255,255,255,0.08);
       box-shadow: var(--shadow);
       position: relative;
@@ -618,7 +656,7 @@
       background: rgba(255,255,255,0.045);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
-      padding: 16px 16px;
+      padding: 16px;
       color: #e7f3ff;
       font-size: 15px;
       transition: 0.28s ease;
@@ -645,7 +683,6 @@
       background: linear-gradient(90deg, var(--accent), var(--primary-2));
     }
 
-    /* About */
     .about-grid {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -666,7 +703,7 @@
       grid-template-columns: 108px 1fr;
       gap: 14px;
       align-items: center;
-      padding: 14px 14px;
+      padding: 14px;
       border-radius: 14px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.06);
@@ -689,7 +726,10 @@
       margin-bottom: 16px;
     }
 
-    /* Skills */
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -734,14 +774,13 @@
     }
 
     .skill-card li {
-      padding: 12px 13px;
+      padding: 12px 13px 12px 36px;
       border-radius: 13px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.05);
       color: #d8e8f7;
       font-size: 14px;
       position: relative;
-      padding-left: 36px;
     }
 
     .skill-card li::before {
@@ -755,7 +794,6 @@
       font-weight: 900;
     }
 
-    /* Experience */
     .timeline {
       position: relative;
       display: grid;
@@ -834,7 +872,6 @@
       margin-bottom: 8px;
     }
 
-    /* Projects */
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -851,34 +888,64 @@
       border-color: rgba(31,182,255,0.25);
     }
 
-    .project-thumb {
+    .project-slider {
       height: 190px;
       border-radius: 20px;
       margin-bottom: 18px;
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 38px;
-      font-weight: 900;
-      letter-spacing: 1px;
-      background:
-        linear-gradient(145deg, rgba(31,182,255,0.18), rgba(59,130,246,0.08)),
-        linear-gradient(145deg, #102344, #0b1730 70%);
+      overflow: hidden;
       border: 1px solid rgba(255,255,255,0.08);
       position: relative;
-      overflow: hidden;
+      background:
+        linear-gradient(145deg, rgba(31,182,255,0.10), rgba(59,130,246,0.06)),
+        linear-gradient(145deg, #102344, #0b1730 70%);
     }
 
-    .project-thumb::before {
+    .project-slider::after {
       content: "";
       position: absolute;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background: rgba(31,182,255,0.14);
-      right: -30px;
-      top: -30px;
-      filter: blur(10px);
+      inset: 0;
+      background: linear-gradient(
+        90deg,
+        rgba(7,18,35,0.35) 0%,
+        rgba(7,18,35,0) 18%,
+        rgba(7,18,35,0) 82%,
+        rgba(7,18,35,0.35) 100%
+      );
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .project-track {
+      display: flex;
+      width: max-content;
+      height: 100%;
+      animation: projectSlide 18s linear infinite;
+    }
+
+    .project-track img {
+      width: 280px;
+      height: 100%;
+      object-fit: cover;
+      flex-shrink: 0;
+      display: block;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .projects-grid .project-card:nth-child(2) .project-track {
+      animation-duration: 20s;
+    }
+
+    .projects-grid .project-card:nth-child(3) .project-track {
+      animation-duration: 16s;
+    }
+
+    @keyframes projectSlide {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-840px);
+      }
     }
 
     .project-card h3 {
@@ -910,7 +977,6 @@
       background: rgba(31,182,255,0.08);
     }
 
-    /* Services */
     .services-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -947,7 +1013,6 @@
       font-size: 14px;
     }
 
-    /* CTA */
     .cta {
       padding-top: 10px;
     }
@@ -994,7 +1059,6 @@
       font-size: 15px;
     }
 
-    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 0.88fr 1.12fr;
@@ -1013,7 +1077,7 @@
 
     .contact-item {
       border-radius: 16px;
-      padding: 16px 16px;
+      padding: 16px;
       border: 1px solid rgba(255,255,255,0.06);
       background: rgba(255,255,255,0.03);
       transition: 0.25s ease;
@@ -1078,7 +1142,6 @@
       resize: vertical;
     }
 
-    /* Footer */
     .footer {
       padding: 26px 0 46px;
       border-top: 1px solid rgba(255,255,255,0.06);
@@ -1089,7 +1152,6 @@
       z-index: 2;
     }
 
-    /* Back to top */
     .back-top {
       position: fixed;
       right: 18px;
@@ -1119,7 +1181,6 @@
       transform: translateY(0);
     }
 
-    /* Reveal */
     .reveal {
       opacity: 0;
       transform: translateY(34px);
@@ -1131,7 +1192,6 @@
       transform: translateY(0);
     }
 
-    /* Responsive */
     @media (max-width: 1120px) {
       .hero-grid,
       .about-grid,
@@ -1161,7 +1221,6 @@
 
       .menu-toggle {
         display: inline-flex;
-        position: relative;
       }
 
       .hero {
@@ -1203,10 +1262,29 @@
 
       .cta-box {
         padding: 26px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
       .cta-box h3 {
         font-size: 28px;
+      }
+
+      .project-slider {
+        height: 220px;
+      }
+
+      .project-track img {
+        width: 320px;
+      }
+
+      @keyframes projectSlide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-960px);
+        }
       }
     }
 
@@ -1234,18 +1312,36 @@
       .header {
         height: 72px;
       }
-      
-    }
-    .btn-cv {
-  color: white;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  box-shadow: 0 18px 40px rgba(34, 197, 94, 0.25);
-}
 
-.btn-cv:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 24px 50px rgba(34, 197, 94, 0.32);
-}
+      .logo {
+        min-width: auto;
+      }
+
+      .logo-text {
+        font-size: 14px;
+      }
+
+      .logo-text span {
+        font-size: 11px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .project-slider {
+        height: 200px;
+      }
+
+      .project-track img {
+        width: 280px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1276,7 +1372,7 @@
 
       <div class="nav-right">
         <a href="#lien-he" class="btn btn-primary">Liên hệ ngay</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu">
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileMenu">
           <span></span>
         </button>
       </div>
@@ -1342,7 +1438,6 @@
           <div>
             <div class="profile-head">
               <div class="avatar">
-                <!-- Nếu có ảnh đại diện, thay avatar.jpg -->
                 <!-- <img src="avatar.jpg" alt="Nguyễn Đình Minh"> -->
                 <div class="avatar-fallback">M</div>
               </div>
@@ -1412,7 +1507,7 @@
               </div>
               <div class="info-row">
                 <strong>Điện thoại</strong>
-                <span>077492296</span>
+                <span>0774925296</span>
               </div>
               <div class="info-row">
                 <strong>Ngày sinh</strong>
@@ -1420,7 +1515,7 @@
               </div>
               <div class="info-row">
                 <strong>Học vấn</strong>
-                <span>Cử Nhân FPT Polytechnic</span>
+                <span>Cử nhân FPT Polytechnic</span>
               </div>
             </div>
           </div>
@@ -1504,7 +1599,7 @@
 
         <div class="timeline">
           <div class="timeline-item reveal">
-            <div class="timeline-date"></div>
+            <div class="timeline-date">2024 - Nay</div>
             <div class="card timeline-card">
               <h3>Nhân viên Digital Marketing / SEO</h3>
               <h4>MHD Media Agency</h4>
@@ -1536,8 +1631,19 @@
         </div>
 
         <div class="projects-grid">
+          <!-- Card 1 -->
           <div class="card project-card reveal">
-            <div class="project-thumb">SEO</div>
+            <div class="project-slider">
+              <div class="project-track">
+                <img src="#" alt="Dự án SEO 1">
+                <img src="#" alt="Dự án SEO 2">
+                <img src="#" alt="Dự án SEO 3">
+                <img src="#" alt="Dự án SEO 1">
+                <img src="#" alt="Dự án SEO 2">
+                <img src="#" alt="Dự án SEO 3">
+              </div>
+            </div>
+
             <h3>Dự án SEO Website</h3>
             <p>
               Tham gia nghiên cứu từ khóa, viết và tối ưu nội dung, cải thiện cấu trúc bài viết, hỗ trợ tăng khả năng hiển thị tự nhiên trên Google.
@@ -1549,8 +1655,19 @@
             </div>
           </div>
 
+          <!-- Card 2 -->
           <div class="card project-card reveal">
-            <div class="project-thumb">ADS</div>
+            <div class="project-slider">
+              <div class="project-track">
+                <img src="#" alt="Dự án Ads 1">
+                <img src="#" alt="Dự án Ads 2">
+                <img src="#" alt="Dự án Ads 3">
+                <img src="#" alt="Dự án Ads 1">
+                <img src="#" alt="Dự án Ads 2">
+                <img src="#" alt="Dự án Ads 3">
+              </div>
+            </div>
+
             <h3>Google Ads Campaign</h3>
             <p>
               Hỗ trợ thiết lập chiến dịch quảng cáo Google Ads, theo dõi dữ liệu và tối ưu các chỉ số nhằm cải thiện hiệu quả ngân sách.
@@ -1562,8 +1679,19 @@
             </div>
           </div>
 
+          <!-- Card 3 -->
           <div class="card project-card reveal">
-            <div class="project-thumb">LP</div>
+            <div class="project-slider">
+              <div class="project-track">
+                <img src="#" alt="Landing Page 1">
+                <img src="#" alt="Landing Page 2">
+                <img src="#" alt="Landing Page 3">
+                <img src="#" alt="Landing Page 1">
+                <img src="#" alt="Landing Page 2">
+                <img src="#" alt="Landing Page 3">
+              </div>
+            </div>
+
             <h3>Landing Page Marketing</h3>
             <p>
               Thiết kế và tinh chỉnh landing page trên WordPress để đồng bộ nội dung, CTA và hỗ trợ hiệu suất chuyển đổi cho chiến dịch.
@@ -1650,7 +1778,7 @@
 
               <div class="contact-item">
                 <strong>Điện thoại</strong>
-                <a href="tel:0774925296">077492296</a>
+                <a href="tel:0774925296">0774925296</a>
               </div>
 
               <div class="contact-item">
@@ -1660,13 +1788,13 @@
 
               <div class="contact-item">
                 <strong>Học vấn</strong>
-                <span>Cử Nhân FPT Polytechnic</span>
+                <span>Cử nhân FPT Polytechnic</span>
               </div>
             </div>
           </div>
 
           <div class="card form-card reveal">
-            <form class="contact-form" onsubmit="sendMail(event)">
+            <form class="contact-form" id="contactForm">
               <div class="form-row">
                 <input type="text" id="name" placeholder="Họ và tên" required />
                 <input type="email" id="email" placeholder="Email của bạn" required />
@@ -1690,6 +1818,60 @@
   <button class="back-top" id="backTop" aria-label="Lên đầu trang">↑</button>
 
   <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const progress = document.getElementById("scrollProgress");
+    const backTop = document.getElementById("backTop");
+    const sections = document.querySelectorAll("section[id]");
+    const desktopNavLinks = document.querySelectorAll(".menu a");
+    const mobileNavLinks = document.querySelectorAll(".mobile-menu a");
+    const allNavLinks = document.querySelectorAll(".menu a, .mobile-menu a");
+    const contactForm = document.getElementById("contactForm");
+
+    function openMenu() {
+      menuToggle.classList.add("active");
+      mobileMenu.classList.add("show");
+      menuToggle.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+      menuToggle.classList.remove("active");
+      mobileMenu.classList.remove("show");
+      menuToggle.setAttribute("aria-expanded", "false");
+    }
+
+    function toggleMenu() {
+      const isOpen = mobileMenu.classList.contains("show");
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        closeMenu();
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+        closeMenu();
+      }
+    });
+
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    });
+
     function sendMail(event) {
       event.preventDefault();
 
@@ -1698,41 +1880,28 @@
       const subject = document.getElementById("subject").value.trim() || "Liên hệ từ portfolio";
       const message = document.getElementById("message").value.trim();
 
-      const body =
-        "Họ tên: " + name + "%0D%0A" +
-        "Email: " + email + "%0D%0A%0D%0A" +
-        "Nội dung:%0D%0A" + message;
+      const body = [
+        "Họ tên: " + name,
+        "Email: " + email,
+        "",
+        "Nội dung:",
+        message
+      ].join("\n");
 
-      window.location.href =
-        "mailto:nguyendinhminh23052003@gmail.com?subject=" +
-        encodeURIComponent(subject) +
-        "&body=" + body;
+      const mailtoLink =
+        "mailto:nguyendinhminh23052003@gmail.com" +
+        "?subject=" + encodeURIComponent(subject) +
+        "&body=" + encodeURIComponent(body);
+
+      window.location.href = mailtoLink;
     }
 
-    // Mobile menu
-    const menuToggle = document.getElementById("menuToggle");
-    const mobileMenu = document.getElementById("mobileMenu");
+    contactForm.addEventListener("submit", sendMail);
 
-    menuToggle.addEventListener("click", function () {
-      menuToggle.classList.toggle("active");
-      mobileMenu.classList.toggle("show");
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menuToggle.classList.remove("active");
-        mobileMenu.classList.remove("show");
-      });
-    });
-
-    // Scroll progress + back top
-    const progress = document.getElementById("scrollProgress");
-    const backTop = document.getElementById("backTop");
-
-    window.addEventListener("scroll", () => {
+    function setScrollEffects() {
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const progressWidth = (scrollTop / docHeight) * 100;
+      const progressWidth = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
       progress.style.width = progressWidth + "%";
 
       if (scrollTop > 500) {
@@ -1740,41 +1909,39 @@
       } else {
         backTop.classList.remove("show");
       }
-    });
+    }
 
     backTop.addEventListener("click", () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
 
-    // Reveal animation
     const reveals = document.querySelectorAll(".reveal");
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+          observer.unobserve(entry.target);
         }
       });
     }, {
       threshold: 0.14
     });
 
-    reveals.forEach(el => observer.observe(el));
-
-    // Active menu by section
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".menu a");
+    reveals.forEach((el) => observer.observe(el));
 
     function setActiveMenu() {
       let current = "";
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 140;
         const sectionHeight = section.offsetHeight;
+
         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
           current = section.getAttribute("id");
         }
       });
 
-      navLinks.forEach(link => {
+      allNavLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.getAttribute("href") === "#" + current) {
           link.classList.add("active");
@@ -1782,8 +1949,15 @@
       });
     }
 
-    window.addEventListener("scroll", setActiveMenu);
-    setActiveMenu();
+    window.addEventListener("scroll", () => {
+      setScrollEffects();
+      setActiveMenu();
+    });
+
+    window.addEventListener("load", () => {
+      setScrollEffects();
+      setActiveMenu();
+    });
   </script>
 </body>
 </html>
